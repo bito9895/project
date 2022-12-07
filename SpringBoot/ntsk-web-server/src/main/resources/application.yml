@@ -1,0 +1,47 @@
+## application name
+spring:
+  application:
+    name: nasa-web-server
+
+## Message Configuration
+  messages:
+    basename: messages
+    encoding: UTF-8
+
+## Web
+server:
+  port: 8080
+
+## Log
+logging: 
+  config: classpath:logback.xml
+  file:
+    path: ./logs
+    name: apl
+  level:
+    root: INFO
+
+# MQ
+spring.activemq:
+  broker-url: tcp://localhost:61616
+  #broker-url: tcp://localhost:61616?jms.prefetchPolicy.queuePrefetch=1
+  user: admin
+  password: secret
+  pool:
+    enabled: true
+    max-connections: 50
+
+spring.jms:
+  listener:
+    concurrency: 5          # 同時コンシューマーの最小数
+    max-concurrency: 10     # 同時コンシューマーの最大数
+  cache:
+    session-cache-size: 5   #
+
+# 周期起動
+application:
+  scheduler:
+    clock: 0 * * * * *
+
+
+

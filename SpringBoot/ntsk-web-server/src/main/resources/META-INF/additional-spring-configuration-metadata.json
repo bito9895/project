@@ -1,0 +1,7 @@
+{"properties": [
+  {
+    "name": "application.scheduler.clock",
+    "type": "java.lang.String",
+    "description": "A description for 'application.scheduler.clock'"
+  }
+]}
