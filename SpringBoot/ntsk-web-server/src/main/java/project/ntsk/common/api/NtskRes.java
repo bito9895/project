@@ -1,12 +1,6 @@
 package project.ntsk.common.api;
 
-import lombok.Data;
+import java.io.Serializable;
 
-@Data
-public class NtskRes<T> {
-
-	private String responseId;
-
-	private T responseData;
-
+public interface NtskRes extends Serializable {
 }

@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="logback.xsd">
 
+  <property name="LOG_PATH" value="./logs" />
+  <property name="LOG_NAME" value="apl" />
+
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>${LOG_PATH:-.}/${LOG_FILE:-test}.log</file>
+    <file>${LOG_PATH}/${LOG_NAME}.log</file>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <fileNamePattern>${LOG_PATH:-.}/${LOG_FILE:-test}.log.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+      <fileNamePattern>${LOG_PATH}/${LOG_NAME}.log.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
       <maxFileSize>50MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
       <maxHistory>30</maxHistory>
     </rollingPolicy>
-
     <encoder>
-      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%thread] [%logger:%line] %msg%n</pattern>
+      <charset>UTF-8</charset>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS'Z',UTC} [%level] [%thread] [%logger{0}.%method:%line] %msg%n</pattern>
     </encoder>
   </appender>
 
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <target>System.out</target>
     <encoder>
-      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%level] [%thread] [%logger:%line] %msg%n</pattern>
+      <charset>UTF-8</charset>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS'Z',UTC} [%level] [%thread] [%logger{0}.%method:%line] %msg%n</pattern>
     </encoder>
   </appender>
 
@@ -26,5 +31,15 @@
     <appender-ref ref="CONSOLE" />
     <appender-ref ref="FILE" />
   </root>
+
+  <logger name="org.springframework" level="INFO">
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="FILE" />
+  </logger>
+
+  <logger name="project.ntsk" level="INFO">
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="FILE" />
+  </logger>
 
 </configuration>

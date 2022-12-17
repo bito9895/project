@@ -1,12 +1,9 @@
 package project.ntsk.common.value;
 
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.OffsetDateTime;
 import java.time.ZoneId;
-import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -20,37 +17,19 @@ public class DateTime {
 	}
 
 	public DateTime(Date date) {
-		Instant instant = date.toInstant();
-		ZoneId zone = ZoneId.systemDefault();
-		LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
-		this.value = localDateTime;
-	}
-
-	public DateTime(OffsetDateTime offsetDateTime) {
-		Instant instant = offsetDateTime.toInstant();
-		ZoneId zone = ZoneId.systemDefault();
-		LocalDateTime localDateTime = LocalDateTime.ofInstant(instant, zone);
-		this.value = localDateTime;
-	}
-
-	public DateTime(String datetime) {
-		LocalDate d = LocalDate.parse(datetime.substring(0, 10), DateTimeFormatter.ISO_DATE);
-		LocalTime t = LocalTime.parse(datetime.substring(11, 16), DateTimeFormatter.ofPattern("H:m"));
-		this.value = LocalDateTime.of(d, t);
+		this.value = LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
 	}
 
 	public static DateTime now() {
-		return new DateTime(LocalDateTime.now());
+		return new DateTime(LocalDateTime.now(ZoneId.systemDefault()));
 	}
 
-	public static DateTime parse(OffsetDateTime datetime) {
-		return new DateTime(datetime);
+	public static DateTime parseUTC(String datetime) {
+		return new DateTime(LocalDateTime.parse(datetime, DateTimeFormatter.ISO_INSTANT));
 	}
 
-	public static DateTime parse(String datetime) {
-		LocalDate d = LocalDate.parse(datetime.substring(0, 10), DateTimeFormatter.ISO_DATE);
-		LocalTime t = LocalTime.parse(datetime.substring(11, 15), DateTimeFormatter.ofPattern("H:m"));
-		return new DateTime(LocalDateTime.of(d, t));
+	public static DateTime parseLocal(String datetime) {
+		return new DateTime(LocalDateTime.parse(datetime, DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 	}
 
 	public static DateTime parse(String date, String time) {
@@ -65,25 +44,19 @@ public class DateTime {
 
 	@Override
 	public String toString() {
-		return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm").format(value);
+		return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(value);
 	}
 
 	public Date toDate() {
-		ZoneId zone = ZoneId.systemDefault();
-		ZonedDateTime zonedDateTime = ZonedDateTime.of(this.value, zone);
-		Instant instant = zonedDateTime.toInstant();
-		Date date = Date.from(instant);
-
-		return date;
+		return Date.from(ZonedDateTime.of(value, ZoneId.systemDefault()).toInstant());
 	}
 
-	public OffsetDateTime toOffsetDateTime() {
-		ZoneId zone = ZoneId.systemDefault();
-		ZonedDateTime zonedDateTime = ZonedDateTime.of(this.value, zone);
-		Instant instant = zonedDateTime.toInstant();
-		ZoneOffset offset = ZoneOffset.ofHours(9);
-		OffsetDateTime offsetDateTime = instant.atOffset(offset);
-		return offsetDateTime;
+	public DateTime toDateTime() {
+		return new DateTime(value);
+	}
+
+	public LocalDate toLocalDate() {
+		return value.toLocalDate();
 	}
 
 	public boolean isAfter(DateTime other) {

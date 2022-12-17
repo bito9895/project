@@ -5,12 +5,12 @@ import org.springframework.context.ApplicationEvent;
 import lombok.Getter;
 import project.ntsk.common.value.DateTime;
 
-@Getter
-public abstract class DomainEvent extends ApplicationEvent {
+public abstract class NtskEvent extends ApplicationEvent {
 
+	@Getter
 	private DateTime dateTime = DateTime.now();
 
-	public DomainEvent(Object source) {
+	public NtskEvent(Object source) {
 		super(source);
 	}
 

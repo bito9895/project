@@ -1,12 +1,13 @@
 package project.ntsk.domain.model.api;
 
 import lombok.Data;
+import project.ntsk.common.jms.NtskJms;
 
 @Data
-public class SampleAReq {
+public class SampleAReq implements NtskJms {
 
-	private String key1;
-	private String key2;
-	private String key3;
+	private Integer key1;
+	private Integer key2;
+	private Integer key3;
 
 }

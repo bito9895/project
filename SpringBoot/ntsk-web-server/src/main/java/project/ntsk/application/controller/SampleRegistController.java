@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
-import project.ntsk.application.service.SampleBRegistAppService;
-import project.ntsk.common.api.NtskReq;
-import project.ntsk.common.api.NtskRes;
+import project.ntsk.application.service.SampleRegistAppService;
+import project.ntsk.common.api.NtskBasicReq;
+import project.ntsk.common.api.NtskBasicRes;
 import project.ntsk.domain.model.api.SampleAReq;
 import project.ntsk.domain.model.api.SampleARes;
 
-@RestController
 @Slf4j
-public class SampleBRegistController {
+@RestController
+public class SampleRegistController {
 
 	@Autowired
-	private SampleBRegistAppService service;
+	private SampleRegistAppService service;
 
-	@PostMapping(value = "/sample", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseStatus(HttpStatus.CREATED)
-	public NtskRes<SampleARes> post(@RequestBody NtskReq<SampleAReq> req) {
+	@PostMapping(value = "/regist", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public NtskBasicRes<SampleARes> post(@RequestBody NtskBasicReq<SampleAReq> req) {
 		return service.execute(req);
 	}
 

@@ -6,6 +6,6 @@ import project.ntsk.common.value.DateTime;
 public class NtskException extends Exception {
 
 	@Getter
-	DateTime timestamp = DateTime.now();
+	DateTime dateTime = DateTime.now();
 
 }
