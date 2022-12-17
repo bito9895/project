@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
 import project.ntsk.common.api.NtskBasicReq;
 import project.ntsk.common.api.NtskBasicRes;
 import project.ntsk.common.exception.NtskException;
@@ -14,6 +15,7 @@ import project.ntsk.domain.model.entity.SampleAEntity;
 import project.ntsk.domain.model.entity.SampleAKey;
 import project.ntsk.domain.service.SampleAService;
 
+@Slf4j
 @Service
 public class SampleQueryAppService {
 
@@ -25,7 +27,7 @@ public class SampleQueryAppService {
 
 	public SampleARes execute(SampleAReq req) throws NtskException {
 
-		SampleAEntity entity = sampleAService.makeSample();
+		SampleAEntity entity = sampleAService.makeEntity();
 		SampleARes res = modelMapper.map(entity, SampleARes.class);
 
 		return res;
@@ -39,7 +41,7 @@ public class SampleQueryAppService {
 		key.setKey2(sampleAReq.getKey2());
 		key.setKey3(sampleAReq.getKey3());
 
-		SampleAEntity entity = sampleAService.findSample(key);
+		SampleAEntity entity = sampleAService.findEntity(key);
 		SampleARes sampleARes = modelMapper.map(entity, SampleARes.class);
 
 		return new NtskBasicRes<SampleARes>(ResID.OK, sampleARes);

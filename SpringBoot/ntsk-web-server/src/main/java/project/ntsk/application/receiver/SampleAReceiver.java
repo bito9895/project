@@ -4,10 +4,11 @@ import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
+import project.ntsk.common.structure.NtskJmsReceiver;
 
-@Component
 @Slf4j
-public class SampleAReceiver {
+@Component
+public class SampleAReceiver extends NtskJmsReceiver {
 
 	private static final String MESSAGE_QUEUE = "TestQue";
 

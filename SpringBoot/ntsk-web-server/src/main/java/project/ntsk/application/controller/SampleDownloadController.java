@@ -15,10 +15,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
+import project.ntsk.common.structure.NtskController;
 
 @Slf4j
 @RestController
-public class SampleDownloadController {
+public class SampleDownloadController extends NtskController {
 
 	@GetMapping("/download/{fileName:.+}")
 	@ResponseStatus(HttpStatus.OK)

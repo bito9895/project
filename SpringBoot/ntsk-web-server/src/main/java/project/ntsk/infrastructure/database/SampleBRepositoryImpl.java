@@ -7,26 +7,28 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import lombok.extern.slf4j.Slf4j;
 import project.ntsk.domain.model.entity.SampleBEntity;
 import project.ntsk.domain.model.entity.SampleBKey;
 import project.ntsk.domain.repository.SampleBRepository;
 
+@Slf4j
 @Repository
-public class PostgresSampleBRepository implements SampleBRepository {
+public class SampleBRepositoryImpl implements SampleBRepository {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	private BeanPropertyRowMapper<SampleBEntity> rowMapper = new BeanPropertyRowMapper<SampleBEntity>();
 
-	public List<SampleBEntity> findAll() {
+	public List<SampleBEntity> find(SampleBKey key) {
 		String sql = "SELECT * FROM SAMPLE_B";
 		return jdbcTemplate.query(sql, rowMapper);
 	}
 
-	public List<SampleBEntity> findByKey(SampleBKey key) {
+	public SampleBEntity findByKey(SampleBKey key) {
 		String sql = "SELECT * FROM SAMPLE_B WHERE key1 = ? AND key2 = ? AND key3 = ?";
-		return jdbcTemplate.query(sql, rowMapper, key.getKey1(), key.getKey2(), key.getKey3());
+		return jdbcTemplate.queryForObject(sql, rowMapper, key.getKey1(), key.getKey2(), key.getKey3());
 	}
 
 	public int delete(SampleBKey key) {

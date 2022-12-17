@@ -12,12 +12,13 @@ import lombok.extern.slf4j.Slf4j;
 import project.ntsk.application.service.SampleRegistAppService;
 import project.ntsk.common.api.NtskBasicReq;
 import project.ntsk.common.api.NtskBasicRes;
+import project.ntsk.common.structure.NtskController;
 import project.ntsk.domain.model.api.SampleAReq;
 import project.ntsk.domain.model.api.SampleARes;
 
 @Slf4j
 @RestController
-public class SampleRegistController {
+public class SampleRegistController extends NtskController {
 
 	@Autowired
 	private SampleRegistAppService service;

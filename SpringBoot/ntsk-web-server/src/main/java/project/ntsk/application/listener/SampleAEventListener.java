@@ -3,13 +3,16 @@ package project.ntsk.application.listener;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import project.ntsk.domain.event.SampleAUpdated;
+import lombok.extern.slf4j.Slf4j;
+import project.ntsk.common.structure.NtskEventListener;
+import project.ntsk.domain.event.SampleUpdated;
 
+@Slf4j
 @Component
-public class SampleAEventListener {
+public class SampleAEventListener extends NtskEventListener {
 
 	@EventListener
-	public void updateSample(SampleAUpdated event) {
+	public void updateSample(SampleUpdated event) {
 	}
 
 }

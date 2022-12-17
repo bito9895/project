@@ -2,9 +2,9 @@ package project.ntsk.domain.event;
 
 import project.ntsk.common.event.NtskEvent;
 
-public class SampleBUpdated extends NtskEvent {
+public class SampleUpdated extends NtskEvent {
 
-	public SampleBUpdated(Object source) {
+	public SampleUpdated(Object source) {
 		super(source);
 	}
 }

@@ -7,9 +7,9 @@ import project.ntsk.domain.model.entity.SampleBKey;
 
 public interface SampleBRepository {
 
-	public List<SampleBEntity> findAll();
+	public List<SampleBEntity> find(SampleBKey key);
 
-	public List<SampleBEntity> findByKey(SampleBKey key);
+	public SampleBEntity findByKey(SampleBKey key);
 
 	public int delete(SampleBKey key);
 

@@ -15,13 +15,14 @@ import project.ntsk.application.service.SampleQueryAppService;
 import project.ntsk.common.api.NtskBasicReq;
 import project.ntsk.common.api.NtskBasicRes;
 import project.ntsk.common.exception.NtskException;
+import project.ntsk.common.structure.NtskController;
 import project.ntsk.common.value.ResID;
 import project.ntsk.domain.model.api.SampleAReq;
 import project.ntsk.domain.model.api.SampleARes;
 
 @Slf4j
 @RestController
-public class SampleQueryController {
+public class SampleQueryController extends NtskController {
 
 	@Autowired
 	private SampleQueryAppService sampleQueryAppService;

@@ -7,12 +7,14 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import lombok.extern.slf4j.Slf4j;
 import project.ntsk.domain.model.entity.SampleAEntity;
 import project.ntsk.domain.model.entity.SampleAKey;
 import project.ntsk.domain.repository.SampleARepository;
 
+@Slf4j
 @Repository
-public class PostgresSampleARepository implements SampleARepository {
+public class SampleARepositoryImpl implements SampleARepository {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;

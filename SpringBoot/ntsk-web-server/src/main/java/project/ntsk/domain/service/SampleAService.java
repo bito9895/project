@@ -9,14 +9,14 @@ import project.ntsk.domain.model.entity.SampleAEntity;
 import project.ntsk.domain.model.entity.SampleAKey;
 import project.ntsk.domain.repository.SampleARepository;
 
-@Component
 @Slf4j
+@Component
 public class SampleAService {
 
 	@Autowired
 	private SampleARepository sampleARepository;
 
-	public SampleAEntity makeSample() throws NtskException {
+	public SampleAEntity makeEntity() throws NtskException {
 
 		try {
 
@@ -41,16 +41,16 @@ public class SampleAService {
 			return aftEntity;
 
 		} catch (Exception e) {
-			throw new NtskException();
+			throw new NtskException(this.getClass().getName());
 		}
 
 	}
 
-	public SampleAEntity findSample(SampleAKey key) {
+	public SampleAEntity findEntity(SampleAKey key) {
 		return sampleARepository.findByKey(key);
 	}
 
-	public void saveSample() {
+	public void saveEntity() {
 
 	}
 

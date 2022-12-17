@@ -1,4 +1,4 @@
-package project.ntsk.common.value;
+package project.ntsk.domain.model.value;
 
 import java.util.EnumMap;
 import java.util.Map;
