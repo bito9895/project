@@ -25,6 +25,7 @@ public class SampleAService {
 			key.setKey2(1);
 			key.setKey3(1);
 
+			sampleARepository.
 			log.info("start");
 			SampleAEntity befEntity = sampleARepository.findByKey(key);
 			SampleAEntity aftEntity = befEntity.clone();
