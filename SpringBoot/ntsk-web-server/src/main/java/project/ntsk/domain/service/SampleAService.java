@@ -25,8 +25,6 @@ public class SampleAService {
 			key.setKey2(1);
 			key.setKey3(1);
 
-			sampleARepository.
-			log.info("start");
 			SampleAEntity befEntity = sampleARepository.findByKey(key);
 			SampleAEntity aftEntity = befEntity.clone();
 
@@ -38,20 +36,6 @@ public class SampleAService {
 
 			log.info(befEntity.toString());
 			log.info(aftEntity.toString());
-
-
-//			Shiporder obj = null;
-//			try {
-//				JAXBContext jc = JAXBContext.newInstance("project.ntsk.domain.cars");
-//	            Unmarshaller um = jc.createUnmarshaller();
-//
-//	            obj = (Shiporder) um.unmarshal(Paths.get("./xml/sample.xml").toFile());
-//
-//
-//			} catch (Exception ex) {
-//			  ex.printStackTrace();
-//			}
-
 
 			return aftEntity;
 

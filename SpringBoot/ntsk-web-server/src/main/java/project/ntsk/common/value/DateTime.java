@@ -67,4 +67,8 @@ public class DateTime {
 		return value.isBefore(other.value);
 	}
 
+	public DateTime dateAdd(int addDay) {
+		return new DateTime(addDay > 0 ? value.plusDays(addDay) : value.minusDays(addDay));
+	}
+
 }

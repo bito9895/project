@@ -8,7 +8,7 @@ import project.ntsk.common.structure.NtskScheduler;
 
 @Slf4j
 @Component
-public class SampleAScheduler extends NtskScheduler {
+public class SampleScheduler extends NtskScheduler {
 
 	@Scheduled(cron = "${application.scheduler.clock}")
 	public void doSchedule() {

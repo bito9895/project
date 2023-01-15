@@ -9,7 +9,7 @@ import project.ntsk.domain.event.SampleUpdated;
 
 @Slf4j
 @Component
-public class SampleAEventListener extends NtskEventListener {
+public class SampleEventListener extends NtskEventListener {
 
 	@EventListener
 	public void updateSample(SampleUpdated event) {

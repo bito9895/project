@@ -7,7 +7,7 @@ import project.ntsk.common.structure.NtskJmsReceiver;
 
 @Slf4j
 @Component
-public class SampleAReceiver extends NtskJmsReceiver {
+public class SampleReceiver extends NtskJmsReceiver {
 
 	private static final String MESSAGE_QUEUE = "TestQue";
 
