@@ -11,7 +11,7 @@ import project.ntsk.domain.repository.SampleARepository;
 
 @Slf4j
 @Component
-public class SampleAService {
+public class SampleService {
 
 	@Autowired
 	private SampleARepository sampleARepository;

@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import lombok.extern.slf4j.Slf4j;
-import project.ntsk.common.api.NtskErrorRes;
 import project.ntsk.common.exception.NtskException;
+import project.ntsk.domain.model.api.NtskErrorRes;
 
 @Slf4j
 @RestControllerAdvice

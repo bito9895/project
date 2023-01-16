@@ -1,8 +1,8 @@
-package project.ntsk.common.value;
+package project.ntsk.domain.value;
 
 import lombok.Getter;
 
-public enum ResID {
+public enum ResponseCD {
 
 	OK(0, "OK"),
 	NG(1, "NG");
@@ -12,13 +12,13 @@ public enum ResID {
 	@Getter
 	private String name;
 
-	private ResID(int no, String name) {
+	private ResponseCD(int no, String name) {
 		this.no = no;
 		this.name = name;
 	}
 
-	public static ResID of(int no) {
-		for (ResID enumValue : values()) {
+	public static ResponseCD of(int no) {
+		for (ResponseCD enumValue : values()) {
 			if (enumValue.getNo() == no) {
 				return enumValue;
 			}
@@ -26,8 +26,8 @@ public enum ResID {
 		throw new RuntimeException("Invalid value");
 	}
 
-	public static ResID of(String name) {
-		for (ResID enumValue : values()) {
+	public static ResponseCD of(String name) {
+		for (ResponseCD enumValue : values()) {
 			if (enumValue.getName() == name) {
 				return enumValue;
 			}
@@ -35,12 +35,12 @@ public enum ResID {
 		throw new RuntimeException("Invalid value");
 	}
 
-	public static ResID[] getAll() {
+	public static ResponseCD[] getAll() {
 		return values();
 	}
 
 	public static boolean exsistNo(int no) {
-		for (ResID enumValue : values()) {
+		for (ResponseCD enumValue : values()) {
 			if (enumValue.getNo() == no) {
 				return true;
 			}
@@ -49,7 +49,7 @@ public enum ResID {
 	}
 
 	public static boolean exsistName(String name) {
-		for (ResID enumValue : values()) {
+		for (ResponseCD enumValue : values()) {
 			if (enumValue.getName() == name) {
 				return true;
 			}

@@ -4,8 +4,7 @@ import lombok.Getter;
 
 public enum LocationID {
 
-	JAPAN(1, "JAPAN"),
-	USA(2, "USA");
+	JAPAN(1, "JAPAN"), USA(2, "USA");
 
 	@Getter
 	private int no;

@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
 import project.ntsk.application.service.SampleQueryAppService;
-import project.ntsk.common.api.NtskBasicReq;
-import project.ntsk.common.api.NtskBasicRes;
 import project.ntsk.common.exception.NtskException;
 import project.ntsk.common.structure.NtskController;
-import project.ntsk.common.value.ResID;
+import project.ntsk.domain.model.api.NtskBasicReq;
+import project.ntsk.domain.model.api.NtskBasicRes;
 import project.ntsk.domain.model.api.SampleAReq;
 import project.ntsk.domain.model.api.SampleARes;
+import project.ntsk.domain.value.ResponseCD;
 
 @Slf4j
 @RestController
@@ -45,7 +45,7 @@ public class SampleQueryController extends NtskController {
 			return sampleQueryAppService.execute(req);
 		} catch (NtskException e) {
 			log.error(e.getMessage());
-			return new NtskBasicRes<>(ResID.NG, null);
+			return new NtskBasicRes<>(ResponseCD.NG, null);
 		}
 	}
 

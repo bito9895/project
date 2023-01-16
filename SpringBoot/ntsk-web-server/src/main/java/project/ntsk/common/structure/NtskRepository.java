@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
-import project.ntsk.common.entity.NtskKey;
+import project.ntsk.domain.model.entity.NtskKey;
 
 public abstract class NtskRepository<K, E> {
 
@@ -23,6 +23,7 @@ public abstract class NtskRepository<K, E> {
 	abstract public int save(E entity);
 
 	protected List<E> findSuper(String tblName, BeanPropertyRowMapper<E> mapper, NtskKey key) {
+
 		String sql = "SELECT * FROM " + tblName;
 		if (key.getWhere() != null) {
 			sql = sql + " WHERE " + key.getWhere();

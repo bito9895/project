@@ -1,7 +1,7 @@
 package project.ntsk.domain.model.entity;
 
 import lombok.Data;
-import project.ntsk.common.entity.NtskEntity;
+import project.ntsk.common.model.NtskEntity;
 
 @Data
 public class SampleBEntity implements NtskEntity {

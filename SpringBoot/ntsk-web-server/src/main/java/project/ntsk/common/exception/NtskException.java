@@ -1,7 +1,5 @@
 package project.ntsk.common.exception;
 
-import org.springframework.lang.Nullable;
-
 import lombok.Getter;
 import project.ntsk.common.value.DateTime;
 
@@ -14,10 +12,8 @@ public class NtskException extends Exception {
 		super(msg);
 	}
 
-	public NtskException(@Nullable String msg, @Nullable Throwable cause) {
+	public NtskException(String msg, Throwable cause) {
 		super(msg, cause);
-
-
 	}
 
 }

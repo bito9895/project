@@ -19,7 +19,7 @@ public class SampleSendJmsMessage {
 	@Autowired
 	private ObjectMapper objectMapper;
 
-	public void query() {
+	public void send() {
 
 		try {
 			SampleAEntity entity = new SampleAEntity();

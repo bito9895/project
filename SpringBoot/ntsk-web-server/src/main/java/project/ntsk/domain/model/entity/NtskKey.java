@@ -1,4 +1,4 @@
-package project.ntsk.common.entity;
+package project.ntsk.domain.model.entity;
 
 import java.io.Serializable;
 import java.util.Map;

@@ -5,7 +5,6 @@ import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import project.ntsk.common.entity.NtskKey;
 
 @AllArgsConstructor
 @NoArgsConstructor

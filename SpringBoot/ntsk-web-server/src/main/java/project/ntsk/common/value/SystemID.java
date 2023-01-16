@@ -4,8 +4,7 @@ import lombok.Getter;
 
 public enum SystemID {
 
-	NTSK(1, "NTSK"),
-	XXXX(2, "XXXX");
+	NTSK(1, "NTSK"), XXXX(2, "XXXX");
 
 	@Getter
 	private int no;
