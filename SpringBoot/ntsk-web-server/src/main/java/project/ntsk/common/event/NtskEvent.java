@@ -8,7 +8,7 @@ import project.ntsk.common.value.DateTime;
 public abstract class NtskEvent extends ApplicationEvent {
 
 	@Getter
-	private DateTime dateTime = DateTime.now();
+	private DateTime dateTime = DateTime.nowLocal();
 
 	public NtskEvent(Object source) {
 		super(source);

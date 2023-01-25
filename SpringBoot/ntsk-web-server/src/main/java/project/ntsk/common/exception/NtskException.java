@@ -6,7 +6,7 @@ import project.ntsk.common.value.DateTime;
 public class NtskException extends Exception {
 
 	@Getter
-	DateTime dateTime = DateTime.now();
+	DateTime dateTime = DateTime.nowLocal();
 
 	public NtskException(String msg) {
 		super(msg);
