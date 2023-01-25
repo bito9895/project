@@ -8,7 +8,7 @@ import project.ntsk.common.model.NtskDto;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class NtskErrorRes implements NtskDto {
-	private String errorCode;
-	private String errorMessage;
+public class ApiBasicReq<T> implements NtskDto {
+	private String requestCode;
+	private T requestData;
 }

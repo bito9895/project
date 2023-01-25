@@ -2,23 +2,24 @@ package project.ntsk.domain.value;
 
 import lombok.Getter;
 
-public enum ResponseCD {
+public enum SampleID {
 
-	OK(0, "OK"),
-	NG(1, "NG");
+	SAMPLE1(1, "SAMPLE1"),
+	SAMPLE2(2, "SAMPLE2"),
+	SAMPLE3(3, "SAMPLE3");
 
 	@Getter
 	private int no;
 	@Getter
 	private String name;
 
-	private ResponseCD(int no, String name) {
+	private SampleID(int no, String name) {
 		this.no = no;
 		this.name = name;
 	}
 
-	public static ResponseCD of(int no) {
-		for (ResponseCD enumValue : values()) {
+	public static SampleID of(int no) {
+		for (SampleID enumValue : values()) {
 			if (enumValue.getNo() == no) {
 				return enumValue;
 			}
@@ -26,8 +27,8 @@ public enum ResponseCD {
 		throw new RuntimeException("Invalid value");
 	}
 
-	public static ResponseCD of(String name) {
-		for (ResponseCD enumValue : values()) {
+	public static SampleID of(String name) {
+		for (SampleID enumValue : values()) {
 			if (enumValue.getName() == name) {
 				return enumValue;
 			}
@@ -35,12 +36,12 @@ public enum ResponseCD {
 		throw new RuntimeException("Invalid value");
 	}
 
-	public static ResponseCD[] getAll() {
+	public static SampleID[] getAll() {
 		return values();
 	}
 
 	public static boolean exsistNo(int no) {
-		for (ResponseCD enumValue : values()) {
+		for (SampleID enumValue : values()) {
 			if (enumValue.getNo() == no) {
 				return true;
 			}
@@ -49,7 +50,7 @@ public enum ResponseCD {
 	}
 
 	public static boolean exsistName(String name) {
-		for (ResponseCD enumValue : values()) {
+		for (SampleID enumValue : values()) {
 			if (enumValue.getName() == name) {
 				return true;
 			}

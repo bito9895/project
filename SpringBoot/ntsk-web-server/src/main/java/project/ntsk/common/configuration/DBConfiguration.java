@@ -1,4 +1,4 @@
-package project.ntsk.configuration;
+package project.ntsk.common.configuration;
 
 import javax.sql.DataSource;
 

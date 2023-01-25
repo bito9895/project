@@ -5,7 +5,7 @@ import java.util.List;
 import project.ntsk.domain.model.entity.SampleAEntity;
 import project.ntsk.domain.model.entity.SampleAKey;
 
-public interface SampleARepository {
+public interface SampleRepository {
 
 	public List<SampleAEntity> find(SampleAKey key);
 

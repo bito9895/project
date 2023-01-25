@@ -1,4 +1,4 @@
-package project.ntsk.configuration;
+package project.ntsk.common.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.web.client.RestTemplateBuilder;

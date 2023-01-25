@@ -14,11 +14,11 @@ import lombok.extern.slf4j.Slf4j;
 import project.ntsk.application.service.SampleQueryAppService;
 import project.ntsk.common.exception.NtskException;
 import project.ntsk.common.structure.NtskController;
-import project.ntsk.domain.model.api.NtskBasicReq;
-import project.ntsk.domain.model.api.NtskBasicRes;
+import project.ntsk.domain.model.api.ApiBasicReq;
+import project.ntsk.domain.model.api.ApiBasicRes;
 import project.ntsk.domain.model.api.SampleAReq;
 import project.ntsk.domain.model.api.SampleARes;
-import project.ntsk.domain.value.ResponseCD;
+import project.ntsk.domain.value.ResCode;
 
 @Slf4j
 @RestController
@@ -40,12 +40,12 @@ public class SampleQueryController extends NtskController {
 
 	@PostMapping(value = "/post", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public NtskBasicRes<SampleARes> post(@RequestBody NtskBasicReq<SampleAReq> req) {
+	public ApiBasicRes<SampleARes> post(@RequestBody ApiBasicReq<SampleAReq> req) {
 		try {
 			return sampleQueryAppService.execute(req);
 		} catch (NtskException e) {
 			log.error(e.getMessage());
-			return new NtskBasicRes<>(ResponseCD.NG, null);
+			return new ApiBasicRes<>(ResCode.NG, null);
 		}
 	}
 

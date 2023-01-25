@@ -32,12 +32,12 @@
     <appender-ref ref="FILE" />
   </root>
 
-  <logger name="org.springframework" level="ERROR">
+  <logger name="org.springframework" level="ERROR" additivity="false">
     <appender-ref ref="CONSOLE" />
     <appender-ref ref="FILE" />
   </logger>
 
-  <logger name="project.ntsk" level="INFO">
+  <logger name="project.ntsk" level="DEBUG" additivity="false">
     <appender-ref ref="CONSOLE" />
   </logger>
 

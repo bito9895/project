@@ -11,11 +11,11 @@ import lombok.extern.slf4j.Slf4j;
 import project.ntsk.common.structure.NtskRepository;
 import project.ntsk.domain.model.entity.SampleAEntity;
 import project.ntsk.domain.model.entity.SampleAKey;
-import project.ntsk.domain.repository.SampleARepository;
+import project.ntsk.domain.repository.SampleRepository;
 
 @Slf4j
 @Repository
-public class SampleARepositoryImpl extends NtskRepository<SampleAKey, SampleAEntity> implements SampleARepository {
+public class SampleRepositoryImpl extends NtskRepository<SampleAKey, SampleAEntity> implements SampleRepository {
 
 	private static final String TABLE_NAME = "";
 

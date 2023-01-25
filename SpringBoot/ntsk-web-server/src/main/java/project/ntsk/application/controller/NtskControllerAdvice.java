@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import lombok.extern.slf4j.Slf4j;
 import project.ntsk.common.exception.NtskException;
-import project.ntsk.domain.model.api.NtskErrorRes;
+import project.ntsk.domain.model.api.ApiErrorRes;
 
 @Slf4j
 @RestControllerAdvice
@@ -15,16 +15,16 @@ public class NtskControllerAdvice {
 
     @ExceptionHandler({NtskException.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public NtskErrorRes handleNtskException(NtskException e) {
+    public ApiErrorRes handleNtskException(NtskException e) {
         log.error("Error:", e.getMessage());
-        return new NtskErrorRes(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()), e.getMessage());
+        return new ApiErrorRes(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()), e.getMessage());
     }
 
     @ExceptionHandler({Exception.class})
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public NtskErrorRes handleException(Exception e) {
+    public ApiErrorRes handleException(Exception e) {
         log.error("Error:", e.getMessage());
-        return new NtskErrorRes(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()), e.getMessage());
+        return new ApiErrorRes(String.valueOf(HttpStatus.INTERNAL_SERVER_ERROR.value()), e.getMessage());
     }
 
 }
