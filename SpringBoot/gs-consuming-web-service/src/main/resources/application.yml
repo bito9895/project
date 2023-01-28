@@ -1,0 +1,10 @@
+logging:
+  level:
+    com.example.consumingwebservice: INFO
+    org:
+      springframework:
+        ws: DEBUG
+
+server:
+  port: 8081
+  
