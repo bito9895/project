@@ -20,8 +20,33 @@ sourceSets {
 	}
 }
 
-dependencies {
+task genJaxb {
+	ext.sourcesDir = "src/main/java"
+	ext.schema = "src/main/resources/countries.xsd"
 
+	outputs.dir sourcesDir
+
+	doLast() {
+		project.ant {
+			taskdef name: "xjc", classname: "com.sun.tools.xjc.XJCTask",
+					classpath: configurations.jaxb.asPath
+			mkdir(dir: sourcesDir)
+
+			xjc(destdir: sourcesDir, schema: schema) {
+				arg(value: "-wsdl")
+				produces(dir: sourcesDir, includes: "**/*.java")
+			}
+		}
+	}
+}
+
+compileJava.dependsOn genJaxb
+
+configurations {
+	jaxb
+}
+
+dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-web-services'
 	implementation 'wsdl4j:wsdl4j'
@@ -30,6 +55,7 @@ dependencies {
 	implementation 'com.sun.xml.messaging.saaj:saaj-impl:1.5.2'
 	implementation 'org.glassfish.jaxb:jaxb-runtime'
 
+	jaxb("org.glassfish.jaxb:jaxb-xjc")
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 

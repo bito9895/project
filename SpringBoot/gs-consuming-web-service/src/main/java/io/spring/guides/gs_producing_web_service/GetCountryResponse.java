@@ -1,8 +1,8 @@
 //
-// ‚±‚Ìƒtƒ@ƒCƒ‹‚ÍAEclipse Implementation of JAXBAv2.3.7‚É‚æ‚Á‚Ä¶¬‚³‚ê‚Ü‚µ‚½ 
-// https://eclipse-ee4j.github.io/jaxb-ri‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢ 
-// ƒ\[ƒXEƒXƒL[ƒ}‚ÌÄƒRƒ“ƒpƒCƒ‹‚É‚±‚Ìƒtƒ@ƒCƒ‹‚Ì•ÏX‚Í¸‚í‚ê‚Ü‚·B 
-// ¶¬“ú: 2023.01.29 ŠÔ 12:28:00 AM JST 
+// ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã€Eclipse Implementation of JAXBã€v2.3.7ã«ã‚ˆã£ã¦ç”Ÿæˆã•ã‚Œã¾ã—ãŸ 
+// https://eclipse-ee4j.github.io/jaxb-riã‚’å‚ç…§ã—ã¦ãã ã•ã„ 
+// ã‚½ãƒ¼ã‚¹ãƒ»ã‚¹ã‚­ãƒ¼ãƒã®å†ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ™‚ã«ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã®å¤‰æ›´ã¯å¤±ã‚ã‚Œã¾ã™ã€‚ 
+// ç”Ÿæˆæ—¥: 2023.01.29 æ™‚é–“ 12:28:00 AM JST 
 //
 
 
@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>anonymous complex type‚ÌJavaƒNƒ‰ƒXB
+ * <p>anonymous complex typeã®Javaã‚¯ãƒ©ã‚¹ã€‚
  * 
- * <p>Ÿ‚ÌƒXƒL[ƒ}Eƒtƒ‰ƒOƒƒ“ƒg‚ÍA‚±‚ÌƒNƒ‰ƒX“à‚ÉŠÜ‚Ü‚ê‚é—\Šú‚³‚ê‚éƒRƒ“ƒeƒ“ƒc‚ğw’è‚µ‚Ü‚·B
+ * <p>æ¬¡ã®ã‚¹ã‚­ãƒ¼ãƒãƒ»ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã¯ã€ã“ã®ã‚¯ãƒ©ã‚¹å†…ã«å«ã¾ã‚Œã‚‹äºˆæœŸã•ã‚Œã‚‹ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚’æŒ‡å®šã—ã¾ã™ã€‚
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -45,7 +45,7 @@ public class GetCountryResponse {
     protected Country country;
 
     /**
-     * countryƒvƒƒpƒeƒB‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * countryãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      * 
      * @return
      *     possible object is
@@ -57,7 +57,7 @@ public class GetCountryResponse {
     }
 
     /**
-     * countryƒvƒƒpƒeƒB‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * countryãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      * 
      * @param value
      *     allowed object is
